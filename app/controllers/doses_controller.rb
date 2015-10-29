@@ -11,6 +11,9 @@ before_action :set_cocktail
   end
 
   def destroy
+    @dose = Dose.find(params[:id])
+    @dose.destroy
+    redirect_to :back
   end
 
   private

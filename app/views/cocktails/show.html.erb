@@ -10,6 +10,7 @@
               <li>
                 <%= dose.ingredient.name %> :
                 <%= dose.description %> cl
+                <%= link_to "delete", dose_path(dose), method: :delete %>
               </li>
             <% end %>
           </p>
@@ -23,7 +24,7 @@
         <%= simple_form_for [@cocktail, @dose] do |f| %>
         <%= f.error_notification %>
 
-        <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "choose an ingredient" %>
+        <%= f.input :ingredient_id, collection: Ingredient.all, label_method: :name, label_value: :id, prompt: "choose an ingredient" %>
         <%= f.input :description, placeholder: "ingredient dose in cl" %>
         <%= f.button :submit, class: 'btn btn-primary'%>
         <% end %>
