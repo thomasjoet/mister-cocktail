@@ -49,3 +49,7 @@ gem 'rspec-rails', group: [ :test ]
 
 gem 'rails_12factor', group: :production
 gem 'puma',           group: :production
+
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
+gem 'simple_form'
