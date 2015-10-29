@@ -1,0 +1,39 @@
+<nav class="navbar-wagon">
+  <div class="container navbar-wagon-container">
+
+    <%= link_to cocktails_path do %>
+      <%= image_tag "logo.png", width: "50px" %>
+    <% end %>
+
+    <div class="navbar-wagon-pusher"></div>
+
+    <form action="" class="navbar-wagon-search hidden-xs hidden-sm">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+      <button type="submit" class="navbar-wagon-search-btn">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+    <hr class="hidden-xs hidden-sm">
+      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
+        <div class="icon-badge-container">
+          <i class="fa fa-envelope-o"></i>
+          <div class="icon-badge icon-badge-blue">3</div>
+        </div>
+      <% end %>
+      <hr>
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <hr>
+    <%= link_to "Add a cocktail", new_cocktail_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+  </div>
+</nav>
+

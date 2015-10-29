@@ -1,0 +1,34 @@
+<h1 class="text-center"><%= @cocktail.name %></h1>
+<p></p>
+  <h3 class="text-center">Ingredients</h3>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <ul class="list-unstyled text-center">
+          <p>
+            <% @cocktail.doses.each do |dose| %>
+              <li>
+                <%= dose.ingredient.name %> :
+                <%= dose.description %> cl
+              </li>
+            <% end %>
+          </p>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.error_notification %>
+
+        <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "choose an ingredient" %>
+        <%= f.input :description, placeholder: "ingredient dose in cl" %>
+        <%= f.button :submit, class: 'btn btn-primary'%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
