@@ -1,4 +1,4 @@
-<%= link_to "Back", cocktails_path %>
+<%= link_to "< Back", cocktails_path %>
 <h1 class="text-center"><%= @cocktail.name %></h1>
 <p></p>
   <div class="container text-center">
@@ -9,11 +9,13 @@
         <ul class="list-unstyled text-center">
           <p>
             <% @cocktail.doses.each do |dose| %>
+              <% if dose.persisted? %>
               <li>
                 <%= dose.ingredient.name %> :
                 <%= dose.description %> cl
                 <%= link_to "delete", dose_path(dose), method: :delete %>
               </li>
+              <% end %>
             <% end %>
           </p>
         </ul>
